@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografía Profesional Santiago de Chile - Feral Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- <meta NAME="Description" CONTENT="Fotógrafo Profesional Santiago de Chile. Iluminación. Arriendo de cámara Cinema Canon EOS C200, lentes Canon L, Director de Fotografía, camarógrafo o asistente de cámara, publicidad, Fotógrafo profesional, videos corporativos, cine, fotografía, proyectos audiovisuales, cine-digital, cinematografía">
+<meta NAME="Keywords" CONTENT="Arriendo, cámara, C200, Cinema, eos c200b, DSLR, fotografía, fotógrafo, Canon 6D, Canon C200, Eos, DSLR, maleta, lentes, óptica, Canon L, Serie-L, Grabación, audiovisual, cine, video, péliculas, iluminación, camarógrafo, accesorios, asistente, cámara, Panel Leds. Director fotografía, Dirección de fotografía, Cinematografía">
+<meta name="googlebot" content="INDEX,FOLLOW">
+<meta name="googlebot-image" content="INDEX,FOLLOW">
+<meta name="googlebot-mobile" content="INDEX,FOLLOW">
+<meta name="revisit-after" content="1 day">
+<meta name="Mediapartners-Google" content="index, follow">
+<meta name="target_country" content="cl" /> 
+<meta name="country" content="Chile" />
+<meta property="og:url"                content="https://ignacinemat.github.io" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="Fotógrafo Profesional, Arriendo Canon  Cinema EOS C200" />
+<meta property="og:description"        content="Fotógrafo Profesional, Arriendo Canon C200B, C200, Lentes Canon L" />
+<meta property="og:image"              content="https://ignacinemat.github.io/img/portafolio/astrofotografia-6.jpg" />
+  <meta property="og:image:url"              content="https://ignacinemat.github.io/img/portafolio/astrofotografia-6.jpg"/>
+  <meta property="og:image:width"              content="1200" />
+    <meta property="og:image:height"              content="600"/> -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+    /* --- RESETEO BÁSICO --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #000000;
+      background: linear-gradient(111deg, rgba(0, 0, 0, 1) 68%, rgba(46, 46, 46, 1) 100%);
+      color: #fff;
+    }
+
+    /* --- TIPOGRAFÍA Y ENLACES --- */
+    .bonheur-royale-regular { font-family: "Bonheur Royale", cursive; }
+    .varela-round-regular { font-family: "Varela Round", sans-serif; }
+    
+    a:link, a:visited { text-decoration: none; color: inherit; }
+    
+    a:hover {
+      color: white;
+      animation: glow 1s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0px 0px 5px #fff, 0px 0px 5px #ffe100; }
+      to { text-shadow: 0px 0px 20px #fff, 0px 0px 20px #ffe100; }
+    }
+
+    /* --- BARRA DE NAVEGACIÓN --- */
+    header {
+      background-color: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: "Bonheur Royale", cursive;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 35px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #dddddd;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: #ffffff; }
+
+    /* --- TÍTULO SECCIÓN --- */
+    .portfolio-title {
+      text-align: center;
+      margin: 4rem 0 3rem 0; /* Espaciado arriba y abajo */
+    }
+    .portfolio-title h1 {
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    /* ========================================= */
+    /* --- SOLUCIÓN B: GRILLA CON MARCO BLANCO --- */
+    /* ========================================= */
+    
+    .row {
+      max-width: 100%; /* Ancho máximo de la grilla */
+      margin: 0 auto;     /* Centrar la grilla en la página */
+      padding: 5px;       /* Espacio entre el borde exterior y las fotos */
+      
+      /* 1. Convertimos el contenedor en un Grid */
+      display: grid;
+      
+      /* 2. Creamos 4 columnas de igual ancho (estático) */
+      grid-template-columns: repeat(4, 1fr);
+      
+      /* 3. Definimos el grosor de las líneas blancas (el espacio entre fotos) */
+      gap: 8px; 
+      
+      /* 4. El "Truco": Fondo blanco que se ve a través del gap */
+      background-color: white;
+      
+      /* Opcional: un borde exterior fino para cerrar el marco */
+      border: 1px solid white; 
+    }
+
+    /* Ajuste para las columnas antiguas (ya no necesitan flex) */
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Espacio vertical entre fotos dentro de la misma columna */
+    }
+
+    /* Asegurar que las imágenes llenen su espacio */
+    .column img {
+      width: 100%;
+      height: auto;
+      display: block; /* Quita espacio extra debajo de las imágenes */
+    }
+
+    /* --- DISEÑO ADAPTATIVO (MÓVILES) --- */
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1rem; }
+      
+      /* En móviles, cambiamos a 2 columnas para que no se vean tan pequeñas */
+      .row {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 4px;
+        gap: 4px;
+      }
+      .column { gap: 4px; }
+    }
+  </style>
+<body>
+</head>
+
+  <!-- Navegación -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <img src="img/feral-logo.png" alt="Feral Logo">
+        <b>Feral Photography</b>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="reel.html">Reel</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Photo Grid con Marco Blanco -->
+  <div class="row"> 
+    <div class="column">
+      <img src="img/portafolio/digitalfilm/digitalfilm-24.jpg">
+      <img src="img/portafolio/corporativo/corporate-27.jpg">
+      <img src="img/portafolio/industrial/industrial-1.jpg">
+      <img src="img/portafolio/naturaleza/astro_00006.jpg">
+     
+    </div>
+    <div class="column">
+      <img src="img/portafolio/retrato/potrait-29.jpg">
+      <img src="img/portafolio/corporativo/corporate-23.jpg">
+      <img src="img/portafolio/digitalfilm/digitalfilm-4.jpg">
+      <img src="img/portafolio/corporativo/corporate-32.jpg">
+    </div>  
+    <div class="column">
+      <img src="img/portafolio/naturaleza/astro_00001.jpg">
+      <img src="img/portafolio/retrato/potrait-50.jpg">
+      <img src="img/portafolio/corporativo/gastronomy-2.jpg">
+      <img src="img/portafolio/corporativo/corporate-1.jpg">
+    </div>
+    <div class="column">
+      <img src="img/portafolio/corporativo/corporate-17.jpg">
+      <img src="img/portafolio/arquitectura/arquitecture-photography-1.jpg">
+      <img src="img/portafolio/naturaleza/astro_00005.jpg">
+      <img src="img/portafolio/naturaleza/nature-2.jpg">
+    </div>
+  </div>
+
+</body>
+</html>
