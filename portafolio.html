@@ -382,10 +382,10 @@ a:visited{
     <nav>
       <a href="#"><div  class="logo" style="text-decoration:none;"><img src="img/feral-logo.png" width="35" style="margin-top:-2px; border-radius: 20px;"><b>Feral Photography</b></div></a>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="reel.html">Reel</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="https://feralphoto.github.io">Inicio</a></li>
+        <li><a href="https://feralphoto.github.io/portafolio.html">Portafolio</a></li>
+        <li><a href="https://feralphoto.github.io/reel.html">Reel</a></li>
+        <li><a href="https://feralphoto.github.io/info.html">Info</a></li>
       </ul>
     </nav>
   </header>
@@ -413,7 +413,7 @@ a:visited{
       <!-- Visor de Fotografía Estática Grande -->
       <div class="featured-display">
         <img id="mainFeaturedImg" src="" alt="">
-        <script src="js/script.js"></script>
+
 
   <!-- 3. Codes la lógica para mostrarlas -->
   <script>
@@ -493,11 +493,15 @@ a:visited{
         const thumbDiv = document.createElement('div');
         thumbDiv.className = `thumb-item ${index === selectedPhotoIndex ? 'active-thumb' : ''}`;
         thumbDiv.onclick = () => selectFeaturedPhoto(index);
-  
+
         const img = document.createElement('img');
         img.src = photo.thumbSrc || photo.src;
         img.alt = photo.title || 'Fotografía';
-  
+        
+        // --- OPTIMIZACIÓN DE CARGA RAPIDA ---
+        img.loading = 'lazy';   // Solo descarga la miniatura cuando aparece en el scroll horizontal
+        img.decoding = 'async'; // Procesa la imagen sin bloquear la interfaz
+
         thumbDiv.appendChild(img);
         thumbTrack.appendChild(thumbDiv);
       });
@@ -506,21 +510,18 @@ a:visited{
     function selectFeaturedPhoto(index) {
       if (filteredPhotos.length === 0) return;
       
-      // Control de ciclo (Si pasa del final, vuelve al inicio y viceversa)
       if (index >= filteredPhotos.length) index = 0;
       if (index < 0) index = filteredPhotos.length - 1;
-  
+
       selectedPhotoIndex = index;
       const photo = filteredPhotos[selectedPhotoIndex];
-  
-      // Transición suave
+
       mainFeaturedImg.style.opacity = '0.3';
       setTimeout(() => {
         mainFeaturedImg.src = photo.src;
         mainFeaturedImg.style.opacity = '1';
       }, 150);
-  
-      // Actualizar clase activa y desplazar miniatura
+
       const thumbs = thumbTrack.getElementsByClassName('thumb-item');
       Array.from(thumbs).forEach((thumb, idx) => {
         if (idx === selectedPhotoIndex) {
@@ -530,8 +531,22 @@ a:visited{
           thumb.classList.remove('active-thumb');
         }
       });
+
+      // --- PRECARGA DE LA SIGUIENTE Y ANTERIOR FOTO ---
+      preloadNextImages(index);
     }
-  
+
+    // Nueva función auxiliar para precargar en segundo plano
+    function preloadNextImages(currentIndex) {
+      const nextIndex = (currentIndex + 1) % filteredPhotos.length;
+      const prevIndex = (currentIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
+      
+      const imgNext = new Image();
+      imgNext.src = filteredPhotos[nextIndex].src;
+      
+      const imgPrev = new Image();
+      imgPrev.src = filteredPhotos[prevIndex].src;
+    }
     // Mover con las flechas de la imagen principal
     function moveSlide(direction) {
       selectFeaturedPhoto(selectedPhotoIndex + direction);

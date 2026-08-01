@@ -1,0 +1,13 @@
+User-agent: googlebot
+
+User-agent: googlebot-image
+
+User-agent: googlebot-mobile
+
+User-agent: facebot
+
+Sitemap: http://feralphoto.github.io/sitemap.xml 
+
+sitemap: http://www.google.com/webmasters/sitemaps/ping?sitemap=URLsitemap
+
+
